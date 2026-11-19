@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    int b[5]={100,500,200,300,600},p[4]={212,417,112,426};
+    int i,j;
+    for(i=0;i<4;i++) {
+        for(j=0;j<5;j++)
+            if(b[j]>=p[i]) {
+                printf("P%d -> Block %d\n",i+1,j+1);
+                b[j]-=p[i];
+                break;
+            }
+        if(j==5) printf("P%d -> Not allocated\n",i+1);
+    }
+    return 0;
+}
